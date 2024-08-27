@@ -201,6 +201,11 @@ label = way of assingning work for slave.
 SETUP:
 #STEP-1 : Create a server and install java-11
 amazon-linux-extras install java-openjdk11 -y
+yum install git java-1.0.8-opensdk maven -y
+update-alternatives --config java
+and select java-11 option
+then run command: which java
+copy path and past it to advance option under launch method in java path
 
 #STEP-2: SETUP THE SLAVE SERVER
 Dashboard -- > Manage Jenkins -- > Nodes & Clouds -- > New node -- > nodename: abc -- > permanaent agent -- > save 
