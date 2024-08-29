@@ -414,7 +414,8 @@ chmod 777 sonarqube-8.9.6.50800 -R
 su - sonar
 
 #run this on server manually
-#sh /opt/sonarqube-8.9.6.50800/bin/linux/sonar.sh start
+#type manually and in bin foler after linux press tab to complete automatically for the right version installed on your machine
+#sh /opt/sonarqube-8.9.6.50800/bin/linux-x86-64/sonar.sh start
 #echo "user=admin & password=admin"
 
 after login -- > add project -- > manual -- > project key -- > netlfix -- > setup -- > token -- > netflix -- > generate -- > continue -- > maven 
