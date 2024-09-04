@@ -201,7 +201,7 @@ label = way of assingning work for slave.
 SETUP:
 #STEP-1 : Create a server and install java-11
 amazon-linux-extras install java-openjdk11 -y
-yum install git java-1.0.8-opensdk maven -y
+yum install git java-1.8.0-openjdk maven -y
 update-alternatives --config java
 and select java-11 option
 then run command: which java
