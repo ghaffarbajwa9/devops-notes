@@ -58,6 +58,23 @@ Internet connection
 Container or virtual machine manager, such as: Docker.
 
 
+MINIKUBE:
+make kube.sh and put following code in that script file.
+
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install curl wget apt-transport-https -y
+sudo curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo mv minikube-linux-amd64 /usr/local/bin/minikube
+sudo chmod +x /usr/local/bin/minikube
+sudo minikube version
+sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+sudo echo "$(cat kubectl.sha256) kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+sudo minikube start --driver=docker --force
 
 PODS:
 It is a smallest unit of deployment in K8's.
@@ -67,7 +84,9 @@ Mostly we can use single container inside a pod but if we required, we can creat
 when we create a pod, containers inside pods can share the same network namespace, and can share the same storage volumes .
 While creating pod, we must specify the image, along with any necessary configuration and resource limits.
 K8's cannot communicate with containers, they can communicate with only pods.
- We can create this pod in two ways, 
+
+We can create this pod in two ways, 
+
 1. Imperative(command) 
 2. Declarative (Manifest file)
 
